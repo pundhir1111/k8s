@@ -1,0 +1,112 @@
+#1. setup the workstation
+1. install openjdk-11-jdk
+sudo apt update -y
+sudo apt install -y openjdk-11-jdk
+
+2. install apache maven
+sudo apt install -y maven
+
+3. install vscode
+download the vscode binary ".deb" from the vscode downloads, by default it will be downloaded into ~/Downloads directory
+cd ~/Downloads
+sudo apt install -f ./code_....deb
+
+4. docker
+4.1
+sudo apt install -y ca-certificates curl gnugp lsb-release
+
+4.2 download and add the gpg docker key
+sudo mkdir -m 0755 -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+4.3 add the docker registry into ubuntu sources.list.d
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+	
+4.4 update the registry
+sudo apt update -y
+
+4.5 install docker
+sudo apt install -y docker-ce
+
+4.6 grant sriman access to the docker by adding him to the docker group
+sudo usermod -aG docker $USER
+exit the terminal and re-enter or restart
+
+run the below command to verify sriman has access to docker
+docker image ls
+
+5. create the IAM User on aws cloud account 
+5.1. group: hondaopsgroup
+     attached policies:
+      1. AmazonEC2FullAccess
+			2. AmazonEKSClusterPolicy
+			3. AmazonEKSWorkerNodePolicy
+			4. AmazonEC2ContainerRegistryFullAccess
+			5. AmazonEKSServicePolicy
+			6. AmazonEKS_CNI_Policy
+5.2 create a user and add him to the above group
+username: bob
+add: hondaopsgroup
+5.3 generate the api keys for accessing
+goto user, click on security credentials and click on generate accesskeys, once generated download them
+
+5. install AWSCli on workstation
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+6. create aws credentails using awscli tool to access the cloud account resources using cli 
+aws configure
+prompts for 
+api key: 
+access key: 
+region: ap-south-1
+output format: none
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
