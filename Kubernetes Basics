@@ -1,0 +1,9 @@
+What is K8s- Kubernetes is a container cluster manager, used to managing, monitoring, scalling the containerized applications on a clustered environment.
+
+why we use- Kubernetes is used for deploying and running microservices based applications, to understand the crux and way the kubernetes works, it is good to know the basics of micro services and their architecture.
+
+Architecture of the applications-
+Monolithic applications
+Microservices Applications
+
+Monolithic application, characterstics, advantages and disadvantages.
