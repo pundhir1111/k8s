@@ -7,3 +7,91 @@ Monolithic applications
 Microservices Applications
 
 Monolithic application, characterstics, advantages and disadvantages.
+all modules and functionality in one module.
+singles source code repo used for versioning and collaborating the developement.
+only one single deployable artifact will be produced out of build proccess.
+app will be deployed in enterprise application server.
+
+Exaple- 
+Honda manufactuctring App - Modules are Row material, inventory, employee, finance sales and marcheting and distribution, built into single source code and packedged and deploy into single deployment.
+
+Advantages-
+All team member are working on all the modules.
+easy to build , packedge and deploy.
+easy to scale
+
+Disadvantages- 
+As the application is very huge so is is very diffeculty to understand by developer.
+Because of hude source code the IDE will got unresponcive.
+building and packedging the application is heavy so it takes time to depoly.
+application server takes time to deploy and start the application.
+
+Deploying monolethic application-
+Apply load balancers-
+Type of load balancer Application load balancer, network load balancer, gateway load balancer.
+Network load balancer routes the request based on HTTP/HTTPS protocol or the port number.For scalablity then go with this.
+Application load balancer routhes the request based on HTTP sementics, path based/query based routhing.If you want session management, path based routihg, sticky session then go with this.
+Horizontal scalling- the whole application running on one more application.Monolothic application will support only HS.
+
+Microservices applications archicture- 
+Exaple- 
+Honda manufactuctring App - Modules are Row material, inventory, employee, finance, sales and marcheting and distribution, built into saprate indivisual project(6 source code projectin this exam).
+Charastics- 
+Devops engg have to create the enviroment and repositories of these projects(6 env and 6 repo in one git server not 6 git server).
+All these microservices project are independent of each other and deploy and packedge independently.
+Each microservices application build into an indpendent deployble artifact, on their server runtime.Tomcat server running on different posrts if they are on same machine.
+Each application has its own database schema(set of table).
+
+How Microservices application reduce the cost and application delivery?
+1.1 In case of microservices each functional area broken down into smaller services and are built saperately into their independent project.
+1.2 Each project doen't have any dependency with another project.(Project classes are can't be resuse).Each project dosnt have dependency on other and will not share even the database schema aswell.
+So each team can work on thei requriemnts and schedule for delivery independent of others due to which each team can run within their own sprints and can plan/priorities their release independent of others.
+
+Independent deployble artifacts-
+
+Since each project is built into its own source code and made them independent of each other,
+those can be build and packged into independent deployable artifacts and are deployed and run onw their own server runtime.Due to this we have planty of advantages-
+2.1 The system resources alloted to the module will be dedicated to the microservices application since each service is deployed on its own server runtime, 
+due to which a load on one application will not affact to other application.
+2.2 Fault isolation- Due to each microservices application is deployed on its oen server is any crash/failure occue in one module/service, it will not affect the whole system.
+2.3 Since each microservices is developed into its own source code and packedged into indepentent deployable artifact, the size of the distributable is very small thus making them--
+1. Quickly distributable accross the environments
+2. Quickly start up 
+  due to this we achive CI/CD
+2.4 By having them independently deployable on ots on server runtime, those can be releases, upgraded or patched independetly without affecting the other parts of the system.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
