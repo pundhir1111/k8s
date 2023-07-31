@@ -1,1 +1,39 @@
-K8S architecture and how it works
+Developer deliver the appliaction the application and devops engg will take the application, contniereze in the docker image and publish to DCR.
+How to make it live- Now K8s comes into picture-
+Ops engineer will share the resource spac file like- docker image: , CPU, Memory aling with port numbers & replicas. We called this file as kubernetes configration file.
+
+Now K8S comes into picture. 
+Kubernetes- Kubernetes is a container cluster manager, it is used for schduling, monitoring, managening and scalling of a containerzed application a network cluster of computers.
+Kubernetes contaoin the 4 parts of it.
+1. Kubernetes master node- Kubernetes master node also called as control plane.Which is a central computer of the kubernetes cluster.The kubernetes master node take care of schduling 
+monitoring and managing the worker nodes.It is connected centrelly to all the nodes to cluster.It has three parts.
+1.1 API manager - We can schdule, monitor and manage containeze application on k8S cluster by talking to the help ot API manager.
+The API manager acts as an face or front end to the k8S cluster.To perform any operation any on the k8S cluster, we need to talk to the API manager only.
+API manager is built on HTTP protocol and expose itself as a httpendpoints/rest endpoint to public world.
+
+There are several ways to talk to API manager-
+1. K8s provided the cli tool called kubectl, through which we can talk to api manager
+2. We can envoke the rest endpoints exposed by API manager. (For programmers not for admins)
+3. There are api liberary provided by the kuberenetes using them we can intrect with the kubernetes api manager.(For programmers not for admins)
+
+
+1.2 Schdular 
+1.3 Controller manager 
+
+
+
+2. kubernetes worker node
+ 2.1 Container runtime - To run the docker container
+ 2.2 kubelet - 
+ 2.3 kubeproxy -
+
+
+3. Control plane
+4. Etcd
+
+
+
+2. Kubernetes Worker contain three things.Also each worker node should have the access of docker container registery.
+ 
+
+
