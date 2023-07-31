@@ -60,7 +60,15 @@ due to which a load on one application will not affact to other application.
   due to this we achive CI/CD
 2.4 By having them independently deployable on ots on server runtime, those can be releases, upgraded or patched independetly without affecting the other parts of the system.  
 
+Why we have to develop indivisual projects?
+we can priorities our delivery and small team can work on each service and they will be having the requried knowladge related to entire service, and that can be deployed and released indepndetly.
 
+Why does each microservice packedge and deploy it own server runtime?
+To achive fault toleence and vertical scalling.
+
+Can we deploy the deploy the app in physical server and can se the load balancer to manage?
+1. manually instal and configure the indivisual server is a complex job.
+2. Calcualting and computing 
 
 
 
