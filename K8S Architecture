@@ -16,11 +16,36 @@ There are several ways to talk to API manager-
 2. We can envoke the rest endpoints exposed by API manager. (For programmers not for admins)
 3. There are api liberary provided by the kuberenetes using them we can intrect with the kubernetes api manager.(For programmers not for admins)
 
+There are 2 major responcibilty of API manager-
+1. The api manager will received the HTTP request from the user/k8s admin.Upon receiving the request ,api manager will validate the request received is valid and can be
+understood for performing operation or not.If the request is invalid,return an error ti user by discarding the request.
+2.The api manager upon reciving the request will verify, wether the user who has send the requsst posses the authrization in carrying or not on the cluster.
+From the above we can understand the the API manager is the gateway of kubernetes cluster.which means any request that has be to enterd into k8s cluster should pass through the api manager only.
+
+What happen if k8s master got crash?
+Will use HA, creating multiple master to handle this sitiation.
 
 1.2 Schdular 
+upon receivig the request by the api manager, the api manager after validating and authriosing the request the api manager will handover the request to schduler asking to run an container
+or pod on k8s cluster.The schduler is responcible for identifing the appropieate worker node on the k8s ckuster on whom the contaioner and pod can schduled for execution.The schduler
+communicates with the kubelet proccess that is running on each worker node and checks wether there is enough amount of capicity is available on the node to run the container or pod on that node.
+If not it goes to the next node of the cluster until it finds the appropirate node for on whom it schduled the pod/container for execution.
+
+Who is responcible for running that container on that perticular worker node.
+Once the appropriate node had been identified the node has been handover to the kubelet procces of the node, asking him to take care of bringing up the pod/container on the node by allocation,
+appropriate resource requried.
+
 1.3 Controller manager 
+ The controler manager is a deamon proccess that is running on the kuberneets master or control plane which ensures which ensures the desired state of pods/containers are running on the k8s 
+container.There are 5 type of containers are there in k8s.
+1. Replica set = ensure the desired number of replica set are running on the cluster. 
+2. Demon set = There are certain containersed application whch will be runnig on all the pods.
+3. Deployment set 
+4. Service
+5. Job
 
-
+*ELK(Elastic search,logstash and kibana)- Logstash is a tool that will read the logs emotsby the containered application, then it will pass to elastic search, elastic serch will index the log files in the database.
+Kibana dashboard will send a request to database and will get the logs on the dashboard, whcih is genrated by application.
 
 2. kubernetes worker node
  2.1 Container runtime - To run the docker container
