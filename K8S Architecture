@@ -64,6 +64,11 @@ and communicate to API manager to master.
 4. Etcd-  is a key/value pair database, where all the object information that we created on kubernetes cluster will be stored as part of etcd database.  
 
 What is POD- A pod is the smallest unit/entity in the k8s cluster where one or more container executed incide it.
+e.g- There can be two containers who might have commen dependency of a  resources like networking, storage. 
+Q: How can we ensure both of these container applications are using these commen resource that there are depenedent on?
+These container might share commen life cycle management as well,how do we ensure that these container s co exist with each other and share commen dependencies?
+A pod may contains atleast one container and at max any no of containers packedged and running inside it.
+
 
 
 
