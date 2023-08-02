@@ -40,25 +40,45 @@ appropriate resource requried.
 container.There are 5 type of containers are there in k8s.
 1. Replica set = ensure the desired number of replica set are running on the cluster. 
 2. Demon set = There are certain containersed application whch will be runnig on all the pods.
-3. Deployment set 
-4. Service
-5. Job
+3. Deployment set = takes care of pod updates
+4. Service = offring network services to all the pods that are running on the k8s cluster, ensures the communication accoress the pods and to the external network 
+5. Job = We want to run an external program on each node of the kubernetes cluster to perform some one time activety, which can be taken care by job controller.
 
 *ELK(Elastic search,logstash and kibana)- Logstash is a tool that will read the logs emotsby the containered application, then it will pass to elastic search, elastic serch will index the log files in the database.
 Kibana dashboard will send a request to database and will get the logs on the dashboard, whcih is genrated by application.
 
-2. kubernetes worker node
- 2.1 Container runtime - To run the docker container
- 2.2 kubelet - 
- 2.3 kubeproxy -
+2. kubernetes worker node- is a computer/machine attach to the k8s master or a control plane on which a pod is schduled for execution.
+A worker node can be schduled to run one or more pods on it based on the capicity of the worker node.There are three major components are there to installed on each worker node.
+ 2.1 Container runtime - A worker node should be installed the container runtime to run the containerised appliaction on it.
+Without container runtime a containerezd application cannot be executed.
+ 2.2 kubelet - Kubelet is a proccess that is run's on each worker node of the cluster.It gathers the information about pods and their statuses and communicate the information to the control plane of the cluster.
+wIn addition we can think of an kubelet as en end proccess to whom control plane communites in schduling and running the pods on worker node.
+we can think of kubelet as an end proccess to whom always the master reach to for any information about worker node.
+ 2.3 kubeproxy - Takes care of enables the traffic to the external network for a pod on the cluster.
+
+3. Kubectl- Kubectl is a cli tool provided by the kubernetes team by itself that enables us to communite with kubemaster or control plane in administring, monitoring and managing the kubernetes cluster.
+The through the help to kubectl we can communicate with api manager of the k8s cluster and pass instructions asking to perform some operation of the cluster.
+The kubectl looks for kubeconfig.yml file under $HOME/.kube/ directory in which the controlplane information will be describe, by reading the info about the control plane the kubectl connect
+and communicate to API manager to master.
+
+4. Etcd-  is a key/value pair database, where all the object information that we created on kubernetes cluster will be stored as part of etcd database.  
+
+What is POD- A pod is the smallest unit/entity in the k8s cluster where one or more container executed incide it.
 
 
-3. Control plane
-4. Etcd
 
-
-
-2. Kubernetes Worker contain three things.Also each worker node should have the access of docker container registery.
  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
