@@ -1,1 +1,25 @@
+Issue on K8s cluster setup manually using vertual machines.
+
+Gernal k8s issues-
+1. master node went down
+2. Certificate expired
+3. Api Server is down/slow.
+4. ETCD crashed
+5. Schdular is not working.
+
+EKS- AWS will provide you the managed control plane.Once you creat the EKS cluster on AWS.It will work as master node.
+
+AWS fargate-  AWS serverless fargate, you can configure worker node.
+
+Banifites of EKS- No worries about.
+1. Certificate expired
+2. Api Server is down/slow.
+3. ETCD crashed 
+
+Network Service-
+1. Cluster IP
+2. Nodeport
+3. load balancer
+
+
 
